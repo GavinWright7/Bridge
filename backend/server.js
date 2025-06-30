@@ -584,11 +584,66 @@ function getJobSpecificTitle(jobTitle, day) {
       'SQL Basics', 'Database Queries', 'Joins', 'Aggregations', 'Data Modeling',
       'Dashboard Creation', 'Storytelling with Data', 'Business Intelligence', 'KPIs', 'Reporting',
       'Advanced Analytics', 'Forecasting', 'A/B Testing', 'Case Studies', 'Final Project'
+    ],
+    'Marketing Coordinator': [
+      'Marketing Fundamentals', 'Target Audience Research', 'Brand Positioning', 'Marketing Mix (4Ps)', 'Consumer Behavior',
+      'Digital Marketing Basics', 'Social Media Marketing', 'Content Marketing', 'Email Marketing', 'SEO Fundamentals',
+      'Google Analytics', 'Facebook Ads Manager', 'Instagram Marketing', 'LinkedIn Marketing', 'Twitter Marketing',
+      'Content Creation', 'Copywriting Basics', 'Visual Design Principles', 'Photography for Marketing', 'Video Marketing',
+      'Campaign Planning', 'Budget Management', 'ROI Measurement', 'A/B Testing', 'Marketing Automation',
+      'Customer Journey Mapping', 'Lead Generation', 'CRM Basics', 'Event Marketing', 'Final Campaign Project'
+    ],
+    'Junior Data Analyst': [
+      'Data Literacy', 'Excel Fundamentals', 'Data Types & Formats', 'Basic Statistics', 'Data Collection',
+      'Data Cleaning Basics', 'Sorting & Filtering', 'Pivot Tables', 'VLOOKUP & HLOOKUP', 'Charts & Graphs',
+      'Statistical Concepts', 'Mean, Median, Mode', 'Standard Deviation', 'Data Distributions', 'Correlation Analysis',
+      'Introduction to SQL', 'Basic Queries', 'WHERE Clauses', 'GROUP BY', 'JOINs',
+      'Data Visualization', 'Dashboard Design', 'Storytelling with Data', 'Presentation Skills', 'Business Context',
+      'Quality Assurance', 'Data Ethics', 'Documentation', 'Final Analysis Project', 'Portfolio Building'
+    ],
+    'Software Developer': [
+      'Programming Fundamentals', 'Problem Solving', 'Algorithms', 'Data Structures', 'Version Control (Git)', 
+      'Object-Oriented Programming', 'Functions & Methods', 'Error Handling', 'Testing Basics', 'Code Documentation',
+      'Web Development Basics', 'APIs & HTTP', 'Databases', 'Security Fundamentals', 'Code Review Process',
+      'Agile Methodology', 'Project Planning', 'User Stories', 'Sprint Planning', 'Team Collaboration',
+      'Performance Optimization', 'Debugging Techniques', 'Best Practices', 'Deployment', 'Final Project'
+    ],
+    'Sales Representative': [
+      'Sales Fundamentals', 'Customer Psychology', 'Active Listening', 'Rapport Building', 'Needs Assessment',
+      'Product Knowledge', 'Value Proposition', 'Features vs Benefits', 'Competitive Analysis', 'Objection Handling',
+      'Sales Process', 'Lead Qualification', 'Discovery Questions', 'Presentation Skills', 'Closing Techniques',
+      'CRM Systems', 'Pipeline Management', 'Follow-up Strategies', 'Customer Retention', 'Upselling & Cross-selling',
+      'Time Management', 'Territory Planning', 'Networking', 'Social Selling', 'Sales Analytics',
+      'Negotiation Skills', 'Contract Basics', 'Customer Success', 'Continuous Learning', 'Final Sales Project'
+    ],
+    'Project Manager': [
+      'Project Management Basics', 'Project Lifecycle', 'Stakeholder Management', 'Scope Definition', 'Requirements Gathering',
+      'Work Breakdown Structure', 'Scheduling', 'Resource Planning', 'Budget Management', 'Risk Assessment',
+      'Team Leadership', 'Communication Skills', 'Meeting Management', 'Conflict Resolution', 'Change Management',
+      'Agile Methodology', 'Scrum Framework', 'Kanban Boards', 'Sprint Planning', 'Retrospectives',
+      'Project Tools', 'Gantt Charts', 'Progress Tracking', 'Quality Assurance', 'Documentation',
+      'Performance Metrics', 'Lessons Learned', 'Project Closure', 'Stakeholder Reporting', 'Final Project Plan'
+    ],
+    'Human Resources Coordinator': [
+      'HR Fundamentals', 'Employment Law Basics', 'Recruitment Process', 'Job Descriptions', 'Interview Techniques',
+      'Onboarding Process', 'Employee Relations', 'Performance Management', 'Compensation & Benefits', 'HRIS Systems',
+      'Training & Development', 'Employee Engagement', 'Workplace Diversity', 'Conflict Resolution', 'Documentation',
+      'Compliance Requirements', 'Safety Regulations', 'Employee Handbook', 'Policy Development', 'Grievance Procedures',
+      'Data Analysis', 'HR Metrics', 'Retention Strategies', 'Exit Interviews', 'Culture Building',
+      'Communication Skills', 'Confidentiality', 'Ethical Practices', 'Change Management', 'HR Strategy'
+    ],
+    'Customer Service Representative': [
+      'Customer Service Basics', 'Communication Skills', 'Active Listening', 'Empathy & Patience', 'Problem Solving',
+      'Product Knowledge', 'Company Policies', 'Service Standards', 'First Call Resolution', 'De-escalation Techniques',
+      'Phone Etiquette', 'Email Communication', 'Chat Support', 'CRM Systems', 'Ticket Management',
+      'Complaint Handling', 'Refund Processes', 'Escalation Procedures', 'Customer Retention', 'Upselling Basics',
+      'Time Management', 'Multitasking', 'Stress Management', 'Team Collaboration', 'Quality Assurance',
+      'Customer Feedback', 'Continuous Improvement', 'Service Recovery', 'Relationship Building', 'Final Case Study'
     ]
   };
 
-  const jobTopics = topics[jobTitle] || topics['Frontend Developer'];
-  return jobTopics[day - 1] || `Topic ${day}`;
+  const jobTopics = topics[jobTitle] || topics['Marketing Coordinator']; // Default to Marketing Coordinator instead of Frontend Developer
+  return jobTopics[day - 1] || `${jobTitle} Topic ${day}`;
 }
 
 // API Routes
@@ -663,7 +718,7 @@ app.post('/api/upload-transcript', upload.single('transcript'), (req, res) => {
   });
 });
 
-// Enhanced learning plan generation endpoint with OpenAI and content library
+// Enhanced learning plan generation endpoint with OpenAI
 app.post('/api/generate-learning-plan', async (req, res) => {
   try {
     const { resumeText, resumeFile, selectedJob, transcriptFile } = req.body;
@@ -672,7 +727,8 @@ app.post('/api/generate-learning-plan', async (req, res) => {
       return res.status(400).json({ error: 'Either resumeText or resumeFile is required, along with selectedJob' });
     }
 
-    console.log('Generating learning plan with OpenAI and content library...');
+    console.log('Generating personalized learning plan with OpenAI...');
+    console.log('Selected Job:', selectedJob);
     
     // Step 1: Get resume text content
     let finalResumeText = resumeText;
@@ -681,28 +737,39 @@ app.post('/api/generate-learning-plan', async (req, res) => {
       finalResumeText = await extractTextFromFile(resumeFile);
     }
     
-    // Step 2: Get missing skills from OpenAI GPT-4
-    const missingSkills = await identifyMissingSkills(finalResumeText, selectedJob);
-    console.log('Missing skills identified:', missingSkills);
+    // Step 2: Get transcript text if provided
+    let transcriptText = '';
+    if (transcriptFile) {
+      console.log('Extracting text from transcript file:', transcriptFile);
+      transcriptText = await extractTextFromFile(transcriptFile);
+    }
     
-    // Step 3: Load content library
-    const contentLibrary = await loadContentLibrary();
+    // Step 3: Generate comprehensive learning plan using OpenAI
+    const learningPlan = await generateLearningPlan(selectedJob, finalResumeText, transcriptText);
     
-    // Step 4: Build 30-day learning plan
-    const learningPlan = buildPlan(missingSkills, contentLibrary);
+    console.log('Learning plan generated for:', selectedJob.title || selectedJob);
+    
+    // Step 4: Also identify missing skills for additional context
+    const missingSkills = await identifyMissingSkills(finalResumeText, selectedJob.title || selectedJob);
     
     res.json({
+      ...learningPlan,
       selectedJob,
       missingSkills,
-      totalDays: 30,
-      plan: learningPlan,
-      title: `Learning Plan for ${selectedJob.title || selectedJob}`,
-      description: `A 30-day personalized learning plan to develop the skills needed for ${selectedJob.title || selectedJob}`,
-      generatedAt: new Date().toISOString()
+      plan: learningPlan.days // Ensure frontend gets the days array
     });
   } catch (error) {
     console.error('Error generating learning plan:', error);
-    res.status(500).json({ error: 'Failed to generate learning plan' });
+    
+    // Fallback to mock plan with job-specific content
+    const fallbackPlan = generateMockLearningPlan(selectedJob);
+    res.json({
+      ...fallbackPlan,
+      selectedJob,
+      missingSkills: ['Excel', 'Communication', 'Problem Solving'],
+      plan: fallbackPlan.days,
+      error: 'Using fallback plan due to OpenAI error'
+    });
   }
 });
 
