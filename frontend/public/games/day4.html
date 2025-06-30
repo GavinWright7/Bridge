@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4 - DOM Manipulation Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        .game-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #ff6b6b;
+            margin: 20px auto;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🎮 DOM Manipulation Game</h1>
+        <p>Click the buttons to manipulate the box below!</p>
+        
+        <div class="score">Score: <span id="score">0</span></div>
+        
+        <div id="gameBox" class="box"></div>
+        
+        <div>
+            <button onclick="changeColor()">Change Color</button>
+            <button onclick="changeSize()">Change Size</button>
+            <button onclick="rotateBox()">Rotate</button>
+            <button onclick="moveBox()">Move</button>
+        </div>
+        
+        <p>Practice DOM manipulation by interacting with elements!</p>
+    </div>
+
+    <script>
+        let score = 0;
+        const box = document.getElementById('gameBox');
+        const scoreElement = document.getElementById('score');
+        
+        const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3'];
+        let currentColorIndex = 0;
+        
+        function updateScore() {
+            score += 10;
+            scoreElement.textContent = score;
+        }
+        
+        function changeColor() {
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+            box.style.backgroundColor = colors[currentColorIndex];
+            updateScore();
+        }
+        
+        function changeSize() {
+            const currentSize = parseInt(box.style.width) || 100;
+            const newSize = currentSize === 100 ? 150 : 100;
+            box.style.width = newSize + 'px';
+            box.style.height = newSize + 'px';
+            updateScore();
+        }
+        
+        function rotateBox() {
+            const currentRotation = parseInt(box.style.transform?.replace('rotate(', '').replace('deg)', '')) || 0;
+            const newRotation = currentRotation + 45;
+            box.style.transform = `rotate(${newRotation}deg)`;
+            updateScore();
+        }
+        
+        function moveBox() {
+            const randomX = Math.random() * 100 - 50;
+            const randomY = Math.random() * 100 - 50;
+            box.style.transform = `translate(${randomX}px, ${randomY}px)`;
+            updateScore();
+        }
+    </script>
+</body>
+</html> 

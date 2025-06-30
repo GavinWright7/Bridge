@@ -1,0 +1,80 @@
+{
+  "title": "Statistics Quiz: Descriptive Analytics",
+  "description": "Test your understanding of descriptive statistics concepts",
+  "duration": 5,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What does the mean represent in a dataset?",
+      "type": "multiple-choice",
+      "options": [
+        "The most frequently occurring value",
+        "The middle value when data is sorted",
+        "The average of all values",
+        "The difference between highest and lowest values"
+      ],
+      "correct": 2,
+      "explanation": "The mean is the average of all values in a dataset, calculated by summing all values and dividing by the count of values."
+    },
+    {
+      "id": 2,
+      "question": "Which measure of central tendency is least affected by outliers?",
+      "type": "multiple-choice",
+      "options": [
+        "Mean",
+        "Median",
+        "Mode",
+        "Range"
+      ],
+      "correct": 1,
+      "explanation": "The median is the middle value and is not affected by extreme outliers, unlike the mean which can be significantly skewed by outliers."
+    },
+    {
+      "id": 3,
+      "question": "What does standard deviation measure?",
+      "type": "multiple-choice",
+      "options": [
+        "The middle value of a dataset",
+        "The most common value in a dataset",
+        "The spread or variability of data around the mean",
+        "The total number of data points"
+      ],
+      "correct": 2,
+      "explanation": "Standard deviation measures how spread out the data points are from the mean. A low standard deviation means data points are close to the mean, while a high standard deviation indicates more spread."
+    },
+    {
+      "id": 4,
+      "question": "True or False: The mode is always unique in a dataset",
+      "type": "true-false",
+      "correct": false,
+      "explanation": "False. A dataset can have multiple modes (bimodal, multimodal) if multiple values occur with the same highest frequency, or no mode if all values occur with equal frequency."
+    },
+    {
+      "id": 5,
+      "question": "In a normal distribution, approximately what percentage of data falls within one standard deviation of the mean?",
+      "type": "multiple-choice",
+      "options": [
+        "50%",
+        "68%",
+        "95%",
+        "99.7%"
+      ],
+      "correct": 1,
+      "explanation": "In a normal distribution, approximately 68% of data falls within one standard deviation of the mean. This is part of the 68-95-99.7 rule (empirical rule)."
+    },
+    {
+      "id": 6,
+      "question": "What is the interquartile range (IQR)?",
+      "type": "multiple-choice",
+      "options": [
+        "The difference between the maximum and minimum values",
+        "The difference between the 75th and 25th percentiles",
+        "The middle 50% of the data",
+        "Both B and C are correct"
+      ],
+      "correct": 3,
+      "explanation": "The IQR is the difference between the 75th percentile (Q3) and 25th percentile (Q1), which represents the middle 50% of the data and is useful for identifying outliers."
+    }
+  ],
+  "passingScore": 75
+} 

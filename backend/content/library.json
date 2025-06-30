@@ -1,0 +1,214 @@
+{
+  "resources": [
+    {
+      "title": "Introduction to SQL Basics",
+      "type": "video",
+      "tags": ["SQL", "database", "queries", "data analysis"],
+      "path": "/videos/sql-basics.mp4",
+      "length": 5
+    },
+    {
+      "title": "Excel Formulas Fundamentals",
+      "type": "video", 
+      "tags": ["Excel", "formulas", "spreadsheets", "data analysis"],
+      "path": "/videos/excel-formulas.mp4",
+      "length": 5
+    },
+    {
+      "title": "Python Data Types Quiz",
+      "type": "quiz",
+      "tags": ["Python", "programming", "data types", "coding"],
+      "path": "/quizzes/python-data-types.json",
+      "length": 5
+    },
+    {
+      "title": "Power BI Dashboard Creation",
+      "type": "video",
+      "tags": ["Power BI", "dashboards", "visualization", "business intelligence"],
+      "path": "/videos/powerbi-dashboards.mp4",
+      "length": 5
+    },
+    {
+      "title": "Data Storytelling Principles",
+      "type": "reading",
+      "tags": ["data storytelling", "communication", "visualization", "presentation"],
+      "path": "/readings/data-storytelling.md",
+      "length": 5
+    },
+    {
+      "title": "SQL Query Builder Game",
+      "type": "game",
+      "tags": ["SQL", "interactive", "practice", "queries"],
+      "path": "/games/sql-builder.html",
+      "length": 5
+    },
+    {
+      "title": "Pivot Tables Mastery",
+      "type": "video",
+      "tags": ["Excel", "pivot tables", "data analysis", "reporting"],
+      "path": "/videos/pivot-tables.mp4",
+      "length": 5
+    },
+    {
+      "title": "Statistics Quiz: Descriptive Analytics",
+      "type": "quiz",
+      "tags": ["statistics", "descriptive", "mean", "median", "data analysis"],
+      "path": "/quizzes/descriptive-stats.json",
+      "length": 5
+    },
+    {
+      "title": "Understanding Data Visualization",
+      "type": "reading",
+      "tags": ["visualization", "charts", "graphs", "design principles"],
+      "path": "/readings/data-visualization.md",
+      "length": 5
+    },
+    {
+      "title": "JavaScript Fundamentals",
+      "type": "video",
+      "tags": ["JavaScript", "programming", "web development", "frontend"],
+      "path": "/videos/javascript-fundamentals.mp4",
+      "length": 5
+    },
+    {
+      "title": "Chart Type Selection Game",
+      "type": "game",
+      "tags": ["visualization", "charts", "decision making", "data presentation"],
+      "path": "/games/chart-selector.html",
+      "length": 5
+    },
+    {
+      "title": "HTML & CSS Basics Quiz",
+      "type": "quiz",
+      "tags": ["HTML", "CSS", "web development", "frontend", "markup"],
+      "path": "/quizzes/html-css-basics.json",
+      "length": 5
+    },
+    {
+      "title": "Introduction to React",
+      "type": "reading",
+      "tags": ["React", "JavaScript", "components", "frontend", "library"],
+      "path": "/readings/react-intro.md",
+      "length": 5
+    },
+    {
+      "title": "Customer Service Best Practices",
+      "type": "video",
+      "tags": ["customer service", "communication", "soft skills", "support"],
+      "path": "/videos/customer-service.mp4",
+      "length": 5
+    },
+    {
+      "title": "Sales Funnel Interactive",
+      "type": "game",
+      "tags": ["sales", "funnel", "conversion", "marketing"],
+      "path": "/games/sales-funnel.html",
+      "length": 5
+    },
+    {
+      "title": "Marketing Analytics Quiz",
+      "type": "quiz",
+      "tags": ["marketing", "analytics", "KPIs", "metrics"],
+      "path": "/quizzes/marketing-analytics.json",
+      "length": 5
+    },
+    {
+      "title": "User Experience Design Principles",
+      "type": "reading",
+      "tags": ["UX", "design", "user experience", "usability"],
+      "path": "/readings/ux-principles.md",
+      "length": 5
+    },
+    {
+      "title": "Git Version Control Basics",
+      "type": "video",
+      "tags": ["Git", "version control", "collaboration", "development"],
+      "path": "/videos/git-basics.mp4",
+      "length": 5
+    },
+    {
+      "title": "Wireframing Practice Tool",
+      "type": "game",
+      "tags": ["wireframing", "UX", "design", "prototyping"],
+      "path": "/games/wireframe-builder.html",
+      "length": 5
+    },
+    {
+      "title": "Agile Methodology Quiz",
+      "type": "quiz",
+      "tags": ["Agile", "Scrum", "project management", "methodology"],
+      "path": "/quizzes/agile-basics.json",
+      "length": 5
+    },
+    {
+      "title": "Database Design Fundamentals",
+      "type": "reading",
+      "tags": ["database", "design", "normalization", "relationships"],
+      "path": "/readings/database-design.md",
+      "length": 5
+    },
+    {
+      "title": "Social Media Strategy",
+      "type": "video",
+      "tags": ["social media", "marketing", "strategy", "content"],
+      "path": "/videos/social-media-strategy.mp4",
+      "length": 5
+    },
+    {
+      "title": "API Integration Simulator",
+      "type": "game",
+      "tags": ["API", "integration", "REST", "development"],
+      "path": "/games/api-simulator.html",
+      "length": 5
+    },
+    {
+      "title": "Leadership Skills Assessment",
+      "type": "quiz",
+      "tags": ["leadership", "management", "soft skills", "communication"],
+      "path": "/quizzes/leadership-assessment.json",
+      "length": 5
+    },
+    {
+      "title": "Project Management Basics",
+      "type": "reading",
+      "tags": ["project management", "planning", "execution", "monitoring"],
+      "path": "/readings/project-management.md",
+      "length": 5
+    },
+    {
+      "title": "Tableau Dashboard Creation",
+      "type": "video",
+      "tags": ["Tableau", "dashboards", "visualization", "analytics"],
+      "path": "/videos/tableau-dashboards.mp4",
+      "length": 5
+    },
+    {
+      "title": "Data Mining Challenge",
+      "type": "game",
+      "tags": ["data mining", "patterns", "analysis", "discovery"],
+      "path": "/games/data-mining.html",
+      "length": 5
+    },
+    {
+      "title": "Machine Learning Concepts Quiz",
+      "type": "quiz",
+      "tags": ["machine learning", "AI", "algorithms", "data science"],
+      "path": "/quizzes/ml-concepts.json",
+      "length": 5
+    },
+    {
+      "title": "Business Communication",
+      "type": "reading",
+      "tags": ["communication", "business", "writing", "presentation"],
+      "path": "/readings/business-communication.md",
+      "length": 5
+    },
+    {
+      "title": "Cloud Computing Fundamentals",
+      "type": "video",
+      "tags": ["cloud", "AWS", "Azure", "infrastructure"],
+      "path": "/videos/cloud-fundamentals.mp4",
+      "length": 5
+    }
+  ]
+} 

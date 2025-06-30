@@ -1,0 +1,67 @@
+{
+  "title": "Python Data Types Quiz",
+  "description": "Test your knowledge of Python's basic data types",
+  "duration": 5,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which of the following is a mutable data type in Python?",
+      "type": "multiple-choice",
+      "options": [
+        "String",
+        "Tuple", 
+        "List",
+        "Integer"
+      ],
+      "correct": 2,
+      "explanation": "Lists are mutable in Python, meaning you can change their contents after creation. Strings, tuples, and integers are immutable."
+    },
+    {
+      "id": 2,
+      "question": "What data type would you use to store a decimal number in Python?",
+      "type": "multiple-choice",
+      "options": [
+        "int",
+        "float",
+        "str",
+        "bool"
+      ],
+      "correct": 1,
+      "explanation": "The float data type is used to store decimal numbers in Python. int is for whole numbers, str for text, and bool for True/False values."
+    },
+    {
+      "id": 3,
+      "question": "Which symbol is used to create a dictionary in Python?",
+      "type": "multiple-choice",
+      "options": [
+        "[]",
+        "()",
+        "{}",
+        "<>"
+      ],
+      "correct": 2,
+      "explanation": "Curly braces {} are used to create dictionaries in Python. Square brackets [] create lists, parentheses () create tuples."
+    },
+    {
+      "id": 4,
+      "question": "True or False: Python strings are case-sensitive",
+      "type": "true-false",
+      "correct": true,
+      "explanation": "Python strings are case-sensitive, meaning 'Hello' and 'hello' are treated as different strings."
+    },
+    {
+      "id": 5,
+      "question": "What will be the output of: type([1, 2, 3])?",
+      "type": "multiple-choice",
+      "options": [
+        "<class 'tuple'>",
+        "<class 'list'>",
+        "<class 'dict'>",
+        "<class 'set'>"
+      ],
+      "correct": 1,
+      "explanation": "The type() function returns the data type of the object. [1, 2, 3] is a list, so it returns <class 'list'>."
+    }
+  ],
+  "passingScore": 80
+} 
